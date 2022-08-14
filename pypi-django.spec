@@ -6,7 +6,7 @@
 #
 Name     : pypi-django
 Version  : 4.0.6
-Release  : 6
+Release  : 7
 URL      : https://files.pythonhosted.org/packages/a4/17/b10aa26d7a566a3c19e9d29fac39c8643cbceb6cd7649a378d676839b5db/Django-4.0.6.tar.gz
 Source0  : https://files.pythonhosted.org/packages/a4/17/b10aa26d7a566a3c19e9d29fac39c8643cbceb6cd7649a378d676839b5db/Django-4.0.6.tar.gz
 Source1  : https://files.pythonhosted.org/packages/a4/17/b10aa26d7a566a3c19e9d29fac39c8643cbceb6cd7649a378d676839b5db/Django-4.0.6.tar.gz.asc
