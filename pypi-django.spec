@@ -6,7 +6,7 @@
 #
 Name     : pypi-django
 Version  : 4.1.2
-Release  : 12
+Release  : 13
 URL      : https://files.pythonhosted.org/packages/09/28/fe1484dfc2e984543a07d5444006122f6cc451fe352bce1d85edcf81a05f/Django-4.1.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/09/28/fe1484dfc2e984543a07d5444006122f6cc451fe352bce1d85edcf81a05f/Django-4.1.2.tar.gz
 Source1  : https://files.pythonhosted.org/packages/09/28/fe1484dfc2e984543a07d5444006122f6cc451fe352bce1d85edcf81a05f/Django-4.1.2.tar.gz.asc
