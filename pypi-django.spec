@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xE17DF5C82B4F9D00 (carlton@noumenal.es)
 #
 Name     : pypi-django
-Version  : 4.1.4
-Release  : 17
-URL      : https://files.pythonhosted.org/packages/de/7d/ca5d224f7d345b0defd0a57c6deb0c6115fbe5304e4d9571f728b617f1a3/Django-4.1.4.tar.gz
-Source0  : https://files.pythonhosted.org/packages/de/7d/ca5d224f7d345b0defd0a57c6deb0c6115fbe5304e4d9571f728b617f1a3/Django-4.1.4.tar.gz
-Source1  : https://files.pythonhosted.org/packages/de/7d/ca5d224f7d345b0defd0a57c6deb0c6115fbe5304e4d9571f728b617f1a3/Django-4.1.4.tar.gz.asc
+Version  : 4.1.7
+Release  : 18
+URL      : https://files.pythonhosted.org/packages/9f/a7/07939866241b7e8f8d3bf164b7d6ad428163723e29dd472700f8ab0e5fd5/Django-4.1.7.tar.gz
+Source0  : https://files.pythonhosted.org/packages/9f/a7/07939866241b7e8f8d3bf164b7d6ad428163723e29dd472700f8ab0e5fd5/Django-4.1.7.tar.gz
+Source1  : https://files.pythonhosted.org/packages/9f/a7/07939866241b7e8f8d3bf164b7d6ad428163723e29dd472700f8ab0e5fd5/Django-4.1.7.tar.gz.asc
 Summary  : A high-level Python web framework that encourages rapid development and clean, pragmatic design.
 Group    : Development/Tools
 License  : Apache-2.0 BSD-3-Clause MIT OFL-1.1
@@ -74,10 +74,10 @@ python3 components for the pypi-django package.
 
 
 %prep
-%setup -q -n Django-4.1.4
-cd %{_builddir}/Django-4.1.4
+%setup -q -n Django-4.1.7
+cd %{_builddir}/Django-4.1.7
 pushd ..
-cp -a Django-4.1.4 buildavx2
+cp -a Django-4.1.7 buildavx2
 popd
 
 %build
@@ -85,7 +85,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1672268170
+export SOURCE_DATE_EPOCH=1676391664
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
