@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-django
-Version  : 4.2.3
-Release  : 22
-URL      : https://files.pythonhosted.org/packages/36/24/d0e78e667f98efcca76c8b670ef247583349a8f5241cdb3c98eeb92726ff/Django-4.2.3.tar.gz
-Source0  : https://files.pythonhosted.org/packages/36/24/d0e78e667f98efcca76c8b670ef247583349a8f5241cdb3c98eeb92726ff/Django-4.2.3.tar.gz
+Version  : 4.2.4
+Release  : 23
+URL      : https://files.pythonhosted.org/packages/8d/d2/a4f823741a12089e9ea0f68e1e7d3b6ad5b64e1665fbe9377cd9e1dc09cc/Django-4.2.4.tar.gz
+Source0  : https://files.pythonhosted.org/packages/8d/d2/a4f823741a12089e9ea0f68e1e7d3b6ad5b64e1665fbe9377cd9e1dc09cc/Django-4.2.4.tar.gz
 Summary  : A high-level Python web framework that encourages rapid development and clean, pragmatic design.
 Group    : Development/Tools
 License  : BSD-3-Clause MIT OFL-1.1
@@ -67,10 +67,10 @@ python3 components for the pypi-django package.
 
 
 %prep
-%setup -q -n Django-4.2.3
-cd %{_builddir}/Django-4.2.3
+%setup -q -n Django-4.2.4
+cd %{_builddir}/Django-4.2.4
 pushd ..
-cp -a Django-4.2.3 buildavx2
+cp -a Django-4.2.4 buildavx2
 popd
 
 %build
@@ -78,7 +78,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1688409820
+export SOURCE_DATE_EPOCH=1690988213
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
