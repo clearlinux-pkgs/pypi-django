@@ -1,5 +1,5 @@
 PKG_NAME := pypi-django
-URL = https://files.pythonhosted.org/packages/23/7b/f47d10d870fabfcaa1fba403460a4e482ab7dbba4d715d43981d1f8c8d85/Django-4.2.6.tar.gz
+URL = https://files.pythonhosted.org/packages/5c/62/0c6ab2f3ac9a242b4562b6be1c418685fa7d1ccb8ca302cdb97e0b23cf4b/Django-4.2.7.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
