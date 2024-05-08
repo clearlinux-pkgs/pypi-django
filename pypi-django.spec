@@ -6,14 +6,15 @@
 # autospec commit: 5905be9
 #
 Name     : pypi-django
-Version  : 5.0.5
-Release  : 35
-URL      : https://files.pythonhosted.org/packages/4b/28/9a6abdfd6b53bc77f0109055dbc6ee41e3427576cf66be3db98095949d75/Django-5.0.5.tar.gz
-Source0  : https://files.pythonhosted.org/packages/4b/28/9a6abdfd6b53bc77f0109055dbc6ee41e3427576cf66be3db98095949d75/Django-5.0.5.tar.gz
+Version  : 5.0.6
+Release  : 36
+URL      : https://files.pythonhosted.org/packages/4c/d3/b0dae3b5e6412227ec4387cf39110be3432c53886d2927c78b5f6976f1cb/Django-5.0.6.tar.gz
+Source0  : https://files.pythonhosted.org/packages/4c/d3/b0dae3b5e6412227ec4387cf39110be3432c53886d2927c78b5f6976f1cb/Django-5.0.6.tar.gz
 Summary  : A high-level Python web framework that encourages rapid development and clean, pragmatic design.
 Group    : Development/Tools
-License  : BSD-3-Clause
+License  : BSD-3-Clause MIT OFL-1.1
 Requires: pypi-django-bin = %{version}-%{release}
+Requires: pypi-django-license = %{version}-%{release}
 Requires: pypi-django-python = %{version}-%{release}
 Requires: pypi-django-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
@@ -37,9 +38,18 @@ and clean, pragmatic design. Thanks for checking it out.
 %package bin
 Summary: bin components for the pypi-django package.
 Group: Binaries
+Requires: pypi-django-license = %{version}-%{release}
 
 %description bin
 bin components for the pypi-django package.
+
+
+%package license
+Summary: license components for the pypi-django package.
+Group: Default
+
+%description license
+license components for the pypi-django package.
 
 
 %package python
@@ -64,10 +74,10 @@ python3 components for the pypi-django package.
 
 
 %prep
-%setup -q -n django-5.0.5
-cd %{_builddir}/django-5.0.5
+%setup -q -n Django-5.0.6
+cd %{_builddir}/Django-5.0.6
 pushd ..
-cp -a django-5.0.5 buildavx2
+cp -a Django-5.0.6 buildavx2
 popd
 
 %build
@@ -75,7 +85,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1715029390
+export SOURCE_DATE_EPOCH=1715129186
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -119,6 +129,17 @@ ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/pypi-django
+cp %{_builddir}/Django-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-django/baf11129ce63c4eef654f39a360b31cfc7d1ac67 || :
+cp %{_builddir}/Django-%{version}/django/contrib/admin/static/admin/css/vendor/select2/LICENSE-SELECT2.md %{buildroot}/usr/share/package-licenses/pypi-django/016d84ac0cab22a77e44e7182bb1691d97449696 || :
+cp %{_builddir}/Django-%{version}/django/contrib/admin/static/admin/img/LICENSE %{buildroot}/usr/share/package-licenses/pypi-django/25180b3c1e27c6d700e4e037e53b970fe36b1f3e || :
+cp %{_builddir}/Django-%{version}/django/contrib/admin/static/admin/js/vendor/jquery/LICENSE.txt %{buildroot}/usr/share/package-licenses/pypi-django/3a62584221d4f6b6a2ee95361c142b4e6e69d1ef || :
+cp %{_builddir}/Django-%{version}/django/contrib/admin/static/admin/js/vendor/select2/LICENSE.md %{buildroot}/usr/share/package-licenses/pypi-django/016d84ac0cab22a77e44e7182bb1691d97449696 || :
+cp %{_builddir}/Django-%{version}/django/contrib/admin/static/admin/js/vendor/xregexp/LICENSE.txt %{buildroot}/usr/share/package-licenses/pypi-django/9bda0c16874b57609a5c99f87e94fc2a299db0d9 || :
+cp %{_builddir}/Django-%{version}/django/contrib/gis/gdal/LICENSE %{buildroot}/usr/share/package-licenses/pypi-django/f0fda12a002635b7014205a973222bbc34df78de || :
+cp %{_builddir}/Django-%{version}/django/contrib/gis/geos/LICENSE %{buildroot}/usr/share/package-licenses/pypi-django/3f9aeadb484dd83ead5656f1bc870e7685607bee || :
+cp %{_builddir}/Django-%{version}/django/dispatch/license.txt %{buildroot}/usr/share/package-licenses/pypi-django/a1f11ae702923c95226800ca5172b00b3f975386 || :
+cp %{_builddir}/Django-%{version}/docs/_theme/djangodocs/static/fontawesome/LICENSE.txt %{buildroot}/usr/share/package-licenses/pypi-django/c48a7d100730cfd1b71d3830179dbf40fdd9c3c2 || :
 python3 -m installer --destdir=%{buildroot} dist/*.whl
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -139,6 +160,18 @@ popd
 %files bin
 %defattr(-,root,root,-)
 /usr/bin/django-admin
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/pypi-django/016d84ac0cab22a77e44e7182bb1691d97449696
+/usr/share/package-licenses/pypi-django/25180b3c1e27c6d700e4e037e53b970fe36b1f3e
+/usr/share/package-licenses/pypi-django/3a62584221d4f6b6a2ee95361c142b4e6e69d1ef
+/usr/share/package-licenses/pypi-django/3f9aeadb484dd83ead5656f1bc870e7685607bee
+/usr/share/package-licenses/pypi-django/9bda0c16874b57609a5c99f87e94fc2a299db0d9
+/usr/share/package-licenses/pypi-django/a1f11ae702923c95226800ca5172b00b3f975386
+/usr/share/package-licenses/pypi-django/baf11129ce63c4eef654f39a360b31cfc7d1ac67
+/usr/share/package-licenses/pypi-django/c48a7d100730cfd1b71d3830179dbf40fdd9c3c2
+/usr/share/package-licenses/pypi-django/f0fda12a002635b7014205a973222bbc34df78de
 
 %files python
 %defattr(-,root,root,-)
