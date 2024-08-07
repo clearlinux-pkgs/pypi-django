@@ -6,13 +6,13 @@
 # autospec commit: f35655a
 #
 Name     : pypi-django
-Version  : 5.0.8
-Release  : 38
-URL      : https://files.pythonhosted.org/packages/79/1c/55733805bb735e26fee0430045efdb61df6fd704b6aebf2154875ef9e6a9/Django-5.0.8.tar.gz
-Source0  : https://files.pythonhosted.org/packages/79/1c/55733805bb735e26fee0430045efdb61df6fd704b6aebf2154875ef9e6a9/Django-5.0.8.tar.gz
+Version  : 5.1
+Release  : 39
+URL      : https://files.pythonhosted.org/packages/1e/0c/d854d25bb74a8a3b41e642bbd27fe6af12fadd0edfd07d487809cf0ef719/Django-5.1.tar.gz
+Source0  : https://files.pythonhosted.org/packages/1e/0c/d854d25bb74a8a3b41e642bbd27fe6af12fadd0edfd07d487809cf0ef719/Django-5.1.tar.gz
 Summary  : A high-level Python web framework that encourages rapid development and clean, pragmatic design.
 Group    : Development/Tools
-License  : BSD-3-Clause MIT OFL-1.1
+License  : BSD-3-Clause CC-BY-SA-3.0 MIT OFL-1.1
 Requires: pypi-django-bin = %{version}-%{release}
 Requires: pypi-django-license = %{version}-%{release}
 Requires: pypi-django-python = %{version}-%{release}
@@ -74,10 +74,10 @@ python3 components for the pypi-django package.
 
 
 %prep
-%setup -q -n Django-5.0.8
-cd %{_builddir}/Django-5.0.8
+%setup -q -n Django-5.1
+cd %{_builddir}/Django-5.1
 pushd ..
-cp -a Django-5.0.8 buildavx2
+cp -a Django-5.1 buildavx2
 popd
 
 %build
@@ -85,7 +85,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1722957023
+export SOURCE_DATE_EPOCH=1723044750
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -140,6 +140,7 @@ cp %{_builddir}/Django-%{version}/django/contrib/gis/gdal/LICENSE %{buildroot}/u
 cp %{_builddir}/Django-%{version}/django/contrib/gis/geos/LICENSE %{buildroot}/usr/share/package-licenses/pypi-django/3f9aeadb484dd83ead5656f1bc870e7685607bee || :
 cp %{_builddir}/Django-%{version}/django/dispatch/license.txt %{buildroot}/usr/share/package-licenses/pypi-django/a1f11ae702923c95226800ca5172b00b3f975386 || :
 cp %{_builddir}/Django-%{version}/docs/_theme/djangodocs/static/fontawesome/LICENSE.txt %{buildroot}/usr/share/package-licenses/pypi-django/c48a7d100730cfd1b71d3830179dbf40fdd9c3c2 || :
+cp %{_builddir}/Django-%{version}/tests/gis_tests/data/geoip2/LICENSE %{buildroot}/usr/share/package-licenses/pypi-django/cdf03962a1463e8d1a97ce306f8f267090298e9f || :
 python3 -m installer --destdir=%{buildroot} dist/*.whl
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -171,6 +172,7 @@ popd
 /usr/share/package-licenses/pypi-django/a1f11ae702923c95226800ca5172b00b3f975386
 /usr/share/package-licenses/pypi-django/baf11129ce63c4eef654f39a360b31cfc7d1ac67
 /usr/share/package-licenses/pypi-django/c48a7d100730cfd1b71d3830179dbf40fdd9c3c2
+/usr/share/package-licenses/pypi-django/cdf03962a1463e8d1a97ce306f8f267090298e9f
 /usr/share/package-licenses/pypi-django/f0fda12a002635b7014205a973222bbc34df78de
 
 %files python
