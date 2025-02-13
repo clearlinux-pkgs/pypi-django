@@ -7,7 +7,7 @@
 #
 Name     : pypi-django
 Version  : 5.1.6
-Release  : 46
+Release  : 47
 URL      : https://files.pythonhosted.org/packages/6d/e4/901f54ee114a080371a49bd08fa688d301aaffd9751febaf4ae855fc8fcd/Django-5.1.6.tar.gz
 Source0  : https://files.pythonhosted.org/packages/6d/e4/901f54ee114a080371a49bd08fa688d301aaffd9751febaf4ae855fc8fcd/Django-5.1.6.tar.gz
 Summary  : A high-level Python web framework that encourages rapid development and clean, pragmatic design.
