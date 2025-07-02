@@ -6,10 +6,10 @@
 # autospec commit: 65cf152
 #
 Name     : pypi-django
-Version  : 5.2.3
-Release  : 52
-URL      : https://files.pythonhosted.org/packages/c6/af/77b403926025dc6f7fd7b31256394d643469418965eb528eab45d0505358/django-5.2.3.tar.gz
-Source0  : https://files.pythonhosted.org/packages/c6/af/77b403926025dc6f7fd7b31256394d643469418965eb528eab45d0505358/django-5.2.3.tar.gz
+Version  : 5.2.4
+Release  : 53
+URL      : https://files.pythonhosted.org/packages/9c/7e/034f0f9fb10c029a02daaf44d364d6bf2eced8c73f0d38c69da359d26b01/django-5.2.4.tar.gz
+Source0  : https://files.pythonhosted.org/packages/9c/7e/034f0f9fb10c029a02daaf44d364d6bf2eced8c73f0d38c69da359d26b01/django-5.2.4.tar.gz
 Summary  : A high-level Python web framework that encourages rapid development and clean, pragmatic design.
 Group    : Development/Tools
 License  : BSD-3-Clause MIT OFL-1.1
@@ -74,10 +74,10 @@ python3 components for the pypi-django package.
 
 
 %prep
-%setup -q -n django-5.2.3
-cd %{_builddir}/django-5.2.3
+%setup -q -n django-5.2.4
+cd %{_builddir}/django-5.2.4
 pushd ..
-cp -a django-5.2.3 buildavx2
+cp -a django-5.2.4 buildavx2
 popd
 
 %build
@@ -85,7 +85,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1749565566
+export SOURCE_DATE_EPOCH=1751493668
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
